@@ -25,8 +25,8 @@
     <div id="side-nav">
       <div class="closeDiv" onclick="closeOverlay();"><div class="closeButton">&times;</div></div>
       <div id="calendar">
-        <p id="calTitle">Google Calendar Quickstart</p>
-        <button id="authorize-button">Events</button>
+        <p id="calTitle">Upcoming Opportunities</p>
+        <button id="authorize-button">Load Events</button>
         <button id="signout-button">Sign Out</button>
         <pre id="content"></pre>
       </div>
@@ -38,9 +38,10 @@
 
     <div id="welcomeScreen">
         <div id="info">
-          <h2>Say Hello To Daizzy<br/><span>Your Personal Chatbot For Scheduling</span></h2>
-          <h3>Daizzy can help schedule volunteer dates, organize events, remind you of upcoming dates, fix conflicts, relay your volunteer information</h3>
-          <div id="startBtn" onclick="start();">Start Scheduling with Daizzy</div>
+          <h2>Say Hello to Daizzy!<br/><span>The Election Volunteer Helper</span></h2>
+          <h3>Daizzy can help you get started as an election volunteer. Talk to Daizzy to sign up, schedule a training session, and more.</h3>
+          <div id="startBtn" onclick="start();">Start Conversation!</div>
+          <img id="daisy" src="images/daisy.png">
         </div>
     </div>
 
@@ -55,7 +56,6 @@
       </div>
       <input type="text" id="input" value="">
     </div>  
-
   </div> 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
