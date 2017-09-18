@@ -17,6 +17,7 @@ body {
   line-height: 50px;
   background-color: #344251;
   display: block;
+  position: relative;
 }
 
 #navigation ul {
@@ -45,14 +46,19 @@ a:hover {
   color: #9CBEBF;
 }
 
+#iconCorner {
+  position: absolute;
+  right: 5.5%;
+  top: 0;
+}
+
 #gitIcon {
   width: 30px;
   height: 30px;
-  margin-left: 50%;
   vertical-align: middle;
 }
 
-#gitIcon:hover {
+#iconCorner:hover #gitIcon{
   animation: flip 0.7s forwards;
 }
 
@@ -69,7 +75,7 @@ a:hover {
   bottom: 0;
   left: 0;
   margin: auto;
-  margin-top: 8%;
+  margin-top: 95px;
 }
 
 #daisy {
@@ -89,12 +95,15 @@ a:hover {
   padding: 15px;
   text-align: center;
   border-radius: inherit;
-  background-color: rgba(85, 92, 99, 0.5);
+  background-color: rgba(131, 140, 149, 0.7);
+  color: #344251;
 }
 
-#info h2 span {
-  font-size: 16px;
-  font-style: italic;
+#info h3 {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  color:  #323f4e;
 }
 
 #startBtn {
@@ -132,9 +141,10 @@ a:hover {
   left: 0;
   display: none;
   width: 50%;
-  height: 85%;
+  height: 600px;
   margin: auto;
-  margin-top: 8%;
+  margin-top: 95px;
+  margin-bottom: 50px;
   transition: 1s;
   background-color: white;
 }
@@ -153,7 +163,7 @@ a:hover {
 #chatLog {
   box-sizing: border-box;
   width: 99.9%;
-  height: 90%;
+  height: 540px;
   padding: 20px;
   overflow: scroll;
   overflow-x: hidden;
@@ -204,8 +214,6 @@ input[type = text], select {
 }
 
 #side-nav {
-  height: 100%;
-  width: 0;
   position: relative;
   z-index: 1;
   top: 0;
@@ -215,7 +223,7 @@ input[type = text], select {
   transition: 0.6s;
 }
 
-.closeButton {
+#closeButton {
   display: block;
   transform: rotate(45deg);
   width: 30px;
@@ -226,7 +234,7 @@ input[type = text], select {
   transition: 0.3s;
 }
 
-.closeButton:hover {
+#closeButton:hover {
   transform: rotate(90deg);
   transform: scale(1.3, 1.3);
   transition: 0.3s;
@@ -244,11 +252,6 @@ input[type = text], select {
   display: none;
 }
 
-#overlayTab:hover {
-  background-color: #F2F2F2;
-  transition: 0.3s;
-}
-
 #menu-icon {
   width: 30px;
   height: 30px;
@@ -258,99 +261,126 @@ input[type = text], select {
   transition: 0.3s;
 }
 
-#menu-icon:hover {
-  transform: rotate(90deg);
-  transition: 0.3s;
-}
-
-#calendar {
+#calendar, #calendar2 {
   font-size: 16px;
-  position: absolute;
-  display: inline-block;
   box-sizing: border-box;
   background-color: #007E9F;
   font-family: 'Josefin Sans', sans-serif;
-  padding: 20px;
-  z-index: 0;
-  top: 85;
-  bottom: 15;
-  right: 0;
-  left: 0;
-  width: 100%;
-  margin: auto;
-  margin-bottom: 2%;
   text-align: center;
-}
-#signout-button {
-  margin-left: 30%;
-}
-
-#authorize-button, #signout-button {
-  background-color: #06C5FB;
-  border-color: #006480;   
-  font-family: 'Josefin Sans', sans-serif;
-  padding: 15px 20px;
-  margin-bottom: 10px;
-  width: 39%;
+  width: 100%;
+  height: 30%;
 }
 
-#calTitle {
+#calTitle, #calTitle2 {
   font-size: 24px;
   background-color: #06C5FB;
   position: relative;
+  bottom: 25px;
   display: inline-block;
   box-sizing: border-box;
   padding: 15px 20px;
-  margin: 20px;
-  width: 80%;
+  width: 100%;
 }
 
-.bot {
-	position: relative;
-	background: #344251;
-	color: white;
-	border-radius: .4em;
-	padding: 15px;
-	width: 60%;
-	margin-right: auto;
-	box-sizing: border-box;
-	margin-bottom: 15px;
-	overflow: auto;
-	word-wrap: break-word;
-	text-align: left;
+#authorize-button, #signout-button, #authorize-button2, #signout-button2 {
+  background-color: #06C5FB;
+  border-color: #006480;   
+  position: relative;
+  bottom: 15px;
+  font-family: 'Josefin Sans', sans-serif;
+  border: none;
+  padding: 15px 20px;
+  width: 40%;
 }
 
 /*Simple Media Queries*/
-@media only screen and (max-width: 1180px){
-  #info {
-    width: 65%;
-  }
-  #startBtn {
-    width: 43%;
+@media only screen and (max-width: 465px){
+  #navigation {
+    width: 465px;
   }
 }
 
-@media only screen and (max-width: 930px) (min-width: 730px){
-  #info {
-    width: 80%;
+@media only screen and (max-width: 480px){ /*for nav bar*/
+  #navigation ul {
+    padding-left: 0;
+    font-size: 15px;
+    transition: 0.2s;
   }
-  #startBtn {
-    width: 43%;
+
+  #cornerIcon {
+    right: 0;
   }
 }
 
-@media only screen and (max-width: 730px){
-  #info {
-    width: 80%;
+@media only screen and (min-width: 571px){ /*for overlay tab larger screen*/
+  #side-nav {
+    height: 100%;
+    width: 0;
   }
-  #startBtn {
-    width: 73%;
+
+  #overlayTab:hover {
+    background-color: #F2F2F2;
+    left: -7px;
+    transition: 0.3s;
+  }
+
+  #overlayTab:hover #menu-icon {
+    transform: rotate(90deg);
+    transition: 0.3s;
+  }
+
+  #overlayTab {
+    animation: overlayTabLeft 0.5s ease-out paused;
   }
 }
 
-@media only screen and (max-width: 800px){
-  #chat{
-    width: 90%;
+@media only screen and (max-width: 570px){ /*for overlay tab at smaller screen*/
+  #navigation {
+    z-index: 1;
+  }
+
+  #side-nav {
+    width: 0;
+    height: 0;
+  }
+
+  #overlayTab {
+    top: 23px;
+    left: 50%;
+    transform: rotate(90deg);
+    animation: overlayTabTop 0.5s ease-out paused;
+  }
+
+  #menu-icon {
+    margin-left: 10px;
+  }
+  
+  #overlayTab:hover {
+    background-color: #F2F2F2;
+    top: 26px;
+    transition: 0.3s;
+  }
+
+  #overlayTab:hover #menu-icon {
+    transform: rotate(90deg);
+    transition: 0.3s;
+  }
+}
+
+@media only screen and (min-width: 941px){ /*use bigger animation for welcome screen*/
+  #welcomeScreen {
+    animation: welcomeScreen 1.5s ease-out forwards paused; 
+  }
+
+}
+
+@media only screen and (max-width: 940px){ /*use smaller screen anim*/
+  #chat {
+    width: 465px;
+  }
+
+  #welcomeScreen {
+    animation: welcomeScreenSmall 1.5s ease-out forwards paused; 
   }
 }
 
@@ -370,7 +400,7 @@ input[type = text], select {
 }
 
 /* ----------- iPhone 5 and 5S ----------- */
-        /* Portrait and Landscape */
+         Portrait and Landscape 
 @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 568px)
